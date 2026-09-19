@@ -1,60 +1,489 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M4y4nky</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaYank - m4y4nky.top</title>
+<meta name="description" content="MaYank's personal site, self-hosted TrueNAS SCALE homelab, Telegram bots, ESP8266/ESP32 hardware projects, and gear, built and run from Mumbai, India.">
+<meta name="keywords" content="MaYank, m4y4nky, homelab, TrueNAS SCALE, self-hosted, Telegram bots, ESP8266, ESP32, Mumbai, cloud computing, Jetking">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://m4y4nky.top/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MaYank - m4y4nky.top">
+<meta property="og:description" content="Self-hosted TrueNAS SCALE homelab, Telegram bots, and ESP8266/ESP32 projects, built and run from Mumbai, India.">
+<meta property="og:url" content="https://m4y4nky.top/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MaYank - m4y4nky.top">
+<meta name="twitter:description" content="Self-hosted TrueNAS SCALE homelab, Telegram bots, and ESP8266/ESP32 projects, built and run from Mumbai, India.">
+<meta name="theme-color" content="#12140F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#e4e1d6;--paper:#faf8f0;--text:#26241f;--muted:#726f61;--mono:'JetBrains Mono',monospace}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:var(--mono);padding:36px 14px}
-@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important}}
-.receipt{max-width:380px;margin:0 auto;background:var(--paper);padding:26px 22px 34px;box-shadow:0 20px 40px -25px rgba(0,0,0,.35);position:relative}
-.receipt::after{content:"";position:absolute;left:0;right:0;bottom:-9px;height:18px;background:
-  linear-gradient(135deg,var(--paper) 25%,transparent 25%) 0 0/16px 16px,
-  linear-gradient(225deg,var(--paper) 25%,transparent 25%) 0 0/16px 16px;
-  background-color:var(--bg)}
-.c{text-align:center}
-.title{font-size:16px;font-weight:700;letter-spacing:.08em}
-.sub{font-size:10.5px;color:var(--muted);margin-top:2px}
-hr{border:none;border-top:1px dashed var(--muted);margin:16px 0}
-.bio{font-size:11.5px;line-height:1.7;margin:0 0 4px}
-h2{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 8px;color:var(--muted)}
-.row{display:flex;justify-content:space-between;font-size:11.5px;padding:3px 0}
-.row.now{font-weight:700}
-.tot{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;border-top:1px solid var(--text);padding-top:8px;margin-top:6px}
-.barcode{height:34px;margin-top:18px;background:repeating-linear-gradient(90deg,var(--text) 0 2px,transparent 2px 5px)}
-.foot{text-align:center;font-size:10px;color:var(--muted);margin-top:10px}
-</style></head><body>
-<div class="receipt">
-  <div class="c">
-    <div class="title">M4Y4NKY</div>
-    <div class="sub">m4y4nky.top</div>
-    <div class="sub">TECH ENTHUSIAST · ANDROID FLASHER · VIBE CODER</div>
+  :root {
+    --bg: #12140F;
+    --surface: #1B1E17;
+    --surface-2: #23261D;
+    --line: #34382C;
+    --text: #EDEAE0;
+    --text-muted: #9A9A8C;
+    --amber: #E8A33D;
+    --teal: #5FBFAE;
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12140F;
+      --surface: #1B1E17;
+      --surface-2: #23261D;
+      --line: #34382C;
+      --text: #EDEAE0;
+      --text-muted: #9A9A8C;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #12140F;
+    --surface: #1B1E17;
+    --surface-2: #23261D;
+    --line: #34382C;
+    --text: #EDEAE0;
+    --text-muted: #9A9A8C;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+  }
+
+  body {
+    color: var(--text);
+    font-family: var(--font-display);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--amber); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 72px 24px 100px;
+  }
+
+  /* ---- Hero ---- */
+  .hero {
+    padding-bottom: 44px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 48px;
+  }
+
+  .hero .path {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0 0 18px;
+    word-break: break-all;
+  }
+
+  .hero .path .sep { color: var(--line); }
+  .hero .path .file { color: var(--amber); }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 10px;
+  }
+
+  .hero .role {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin: 0 0 22px;
+    max-width: 46ch;
+  }
+
+  .status-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .status-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+
+  .status-chip .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
+  }
+
+  /* ---- Sections ---- */
+  section { margin-bottom: 56px; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 16px;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .section-head .count {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .about p {
+    margin: 0 0 16px;
+    max-width: 62ch;
+    color: var(--text);
+  }
+
+  .about p:last-child { margin-bottom: 0; }
+
+  .about .highlight {
+    color: var(--amber);
+  }
+
+  .stack-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+  }
+
+  .stack-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--teal);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 4px 9px;
+  }
+
+  /* ---- Setup cards ---- */
+  .setup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .spec-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px 18px 16px;
+  }
+
+  .spec-card h3 {
+    margin: 0 0 3px;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .spec-card .spec-sub {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin: 0 0 14px;
+  }
+
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 7px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .spec-row:first-of-type { border-top: none; }
+
+  .spec-row .k {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .spec-row .v {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    text-align: right;
+  }
+
+  .spec-card .stack-line { margin-top: 16px; }
+
+  @media (max-width: 620px) {
+    .setup-grid { grid-template-columns: 1fr; }
+  }
+
+  .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+
+  .service-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.85rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 7px 12px;
+  }
+
+  .service-chip .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
+  }
+
+  /* ---- Device timeline ---- */
+  .timeline {
+    position: relative;
+    padding-left: 26px;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: var(--line);
+  }
+
+  .device {
+    position: relative;
+    padding: 14px 16px;
+    margin-bottom: 6px;
+    border-radius: 7px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .device::before {
+    content: "";
+    position: absolute;
+    left: -26px;
+    top: 19px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--text-muted);
+  }
+
+  .device .name {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .device .year {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .device.current {
+    background: var(--surface);
+    border: 1px solid var(--amber);
+  }
+
+  .device.current::before {
+    background: var(--amber);
+    border-color: var(--amber);
+    box-shadow: 0 0 0 4px rgba(232, 163, 61, 0.18);
+  }
+
+  .device.current .name { color: var(--amber); }
+
+  .current-tag {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--bg);
+    background: var(--amber);
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin-left: 8px;
+    letter-spacing: 0.02em;
+    font-weight: 600;
+  }
+
+  /* ---- Footer ---- */
+  footer {
+    border-top: 1px solid var(--line);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 48px 18px 72px; }
+    .device { padding: 12px 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <p class="path"><span class="file">~/mayank</span><span class="sep">$</span> whoami</p>
+    <h1>MaYank</h1>
+    <p class="role">B.Com graduate with a Diploma in Cloud Computing from Jetking, currently looking for my first break into IT. Runs a homelab off a spare Dell OptiPlex, builds Telegram bots, and keeps m4y4nky.top alive on it.</p>
+    <div class="status-row">
+      <span class="status-chip"><span class="dot"></span>Mumbai, India</span>
+      <span class="status-chip">m4y4nky.top</span>
+      <span class="status-chip">Open to IT roles</span>
+    </div>
   </div>
-  <hr>
-  <p class="bio">Tech enthusiast from day one — rooting phones and flashing custom ROMs just for the love of it. Not a dev, just someone who can't leave stock alone. These days into self-hosting and vibe coding with AI.</p>
-  <hr>
-  <h2>flash history</h2>
-  <div class="row now"><span>OnePlus 15R</span><span>2026</span></div>
-  <div class="row"><span>OnePlus 13</span><span>2025–26</span></div>
-  <div class="row"><span>OnePlus Nord 5</span><span>2025</span></div>
-  <div class="row"><span>Nothing Phone (3a)</span><span>2025</span></div>
-  <div class="row"><span>CMF Phone 1</span><span>2024</span></div>
-  <div class="row"><span>Poco F5</span><span>2024</span></div>
-  <div class="row"><span>Redmi Note 10 Pro</span><span>2021–23</span></div>
-  <div class="row"><span>POCO X2</span><span>2020</span></div>
-  <div class="row"><span>Redmi Note 5 Pro</span><span>2019</span></div>
-  <div class="row"><span>Samsung Galaxy A8 & J2</span><span>2017–18</span></div>
-  <div class="row"><span>LYF LS-4005</span><span>2016</span></div>
-  <div class="row"><span>Lava Iris X5</span><span>2016</span></div>
-  <div class="tot"><span>DEVICES FLASHED</span><span>12</span></div>
-  <hr>
-  <h2>skills</h2>
-  <div class="row"><span>Android rooting & unlocking</span><span>✓</span></div>
-  <div class="row"><span>Custom ROM flashing</span><span>✓</span></div>
-  <div class="row"><span>ADB/Fastboot, Magisk, Xposed</span><span>✓</span></div>
-  <div class="row"><span>Self-hosting & Linux VPS</span><span>✓</span></div>
-  <div class="row"><span>Vibe coding (AI-assisted)</span><span>✓</span></div>
-  <div class="barcode"></div>
-  <div class="foot">THANK YOU FOR VISITING — <span id="y"></span></div>
+
+  <section class="about">
+    <div class="section-head">
+      <h2>About</h2>
+    </div>
+    <p>Did my B.Com, but IT's where my head's always been, so took a <span class="highlight">Diploma in Cloud Computing from Jetking</span> for it, and I'm on the hunt for my first IT job now. Desktop support to start, sysadmin eventually.</p>
+    <p>Most of the actual learning happens on my homelab. Got <span class="highlight">TrueNAS SCALE</span> running on an old Dell OptiPlex, everything sits behind Traefik on my own domain, <span class="highlight">m4y4nky.top</span>. Also run a few Telegram bots and a lookup API on a VPS, and built an <span class="highlight">ESP8266 bot</span> that lets me wake the server up remotely over Telegram, it's running round the clock.</p>
+    <div class="stack-line">
+      <span class="stack-tag">TrueNAS SCALE</span>
+      <span class="stack-tag">Traefik</span>
+      <span class="stack-tag">Telegram Bots</span>
+      <span class="stack-tag">FastAPI</span>
+      <span class="stack-tag">ESP32 / ESP8266</span>
+      <span class="stack-tag">Fedora Linux</span>
+    </div>
+  </section>
+
+  <section class="setup">
+    <div class="section-head">
+      <h2>Setup</h2>
+    </div>
+    <div class="setup-grid">
+      <div class="spec-card">
+        <h3>Home Server</h3>
+        <p class="spec-sub">M4y4nky-Home-Server</p>
+        <div class="spec-row"><span class="k">Host</span><span class="v">Dell OptiPlex 5060 SFF</span></div>
+        <div class="spec-row"><span class="k">CPU</span><span class="v">i5-8500T · 6c/6t</span></div>
+        <div class="spec-row"><span class="k">RAM</span><span class="v">32GB DDR4 2666MHz</span></div>
+        <div class="spec-row"><span class="k">OS</span><span class="v">TrueNAS SCALE 25.10.7</span></div>
+        <div class="spec-row"><span class="k">Storage</span><span class="v">128GB SATA SSD (boot) · 512GB NVMe (apps) · 2×2TB HDD 3.5" (mirror) · 2.5" external HDD</span></div>
+      </div>
+      <div class="spec-card">
+        <h3>Laptop</h3>
+        <p class="spec-sub">Acer Aspire 7 (A715-76G)</p>
+        <div class="spec-row"><span class="k">CPU</span><span class="v">i5-12450H · 8c/12t</span></div>
+        <div class="spec-row"><span class="k">GPU</span><span class="v">RTX 3050 4GB + Iris UHD</span></div>
+        <div class="spec-row"><span class="k">RAM</span><span class="v">16GB DDR4 3200MHz</span></div>
+        <div class="spec-row"><span class="k">Storage</span><span class="v">1TB Samsung 980 PRO SSD</span></div>
+        <div class="spec-row"><span class="k">OS</span><span class="v">Windows 11 Home</span></div>
+      </div>
+      <div class="spec-card">
+        <h3>Phone</h3>
+        <p class="spec-sub">OnePlus 13</p>
+        <div class="spec-row"><span class="k">Chipset</span><span class="v">Snapdragon 8 Elite</span></div>
+        <div class="spec-row"><span class="k">Display</span><span class="v">6.82" LTPO AMOLED · 120Hz</span></div>
+        <div class="spec-row"><span class="k">RAM</span><span class="v">12GB LPDDR5X</span></div>
+        <div class="spec-row"><span class="k">Storage</span><span class="v">256GB UFS 4.0</span></div>
+        <div class="spec-row"><span class="k">Battery</span><span class="v">6000mAh · 100W wired</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="section-head">
+      <h2>Self-hosted</h2>
+      <span class="count">14 services</span>
+    </div>
+    <div class="services-grid">
+      <span class="service-chip"><span class="dot"></span>Traefik</span>
+      <span class="service-chip"><span class="dot"></span>AdGuard Home</span>
+      <span class="service-chip"><span class="dot"></span>Tailscale</span>
+      <span class="service-chip"><span class="dot"></span>Cloudflared</span>
+      <span class="service-chip"><span class="dot"></span>Vaultwarden</span>
+      <span class="service-chip"><span class="dot"></span>Immich</span>
+      <span class="service-chip"><span class="dot"></span>Jellyfin</span>
+      <span class="service-chip"><span class="dot"></span>Home Assistant</span>
+      <span class="service-chip"><span class="dot"></span>Paperless-ngx</span>
+      <span class="service-chip"><span class="dot"></span>FileBrowser Quantum</span>
+      <span class="service-chip"><span class="dot"></span>Scrutiny</span>
+      <span class="service-chip"><span class="dot"></span>Lookup API</span>
+      <span class="service-chip"><span class="dot"></span>Telegram Lookup Bot</span>
+      <span class="service-chip"><span class="dot"></span>Telegram Userbot</span>
+    </div>
+  </section>
+
+  <section class="devices">
+    <div class="section-head">
+      <h2>Phones I've owned</h2>
+      <span class="count">since 2016</span>
+    </div>
+    <div class="timeline">
+      <div class="device"><span class="name">Lava Iris X5</span><span class="year">2016</span></div>
+      <div class="device"><span class="name">LYF LS-4005</span><span class="year">2016</span></div>
+      <div class="device"><span class="name">Samsung Galaxy A8 &amp; J2</span><span class="year">2017–18</span></div>
+      <div class="device"><span class="name">Redmi Note 5 Pro</span><span class="year">2019</span></div>
+      <div class="device"><span class="name">POCO X2</span><span class="year">2020</span></div>
+      <div class="device"><span class="name">Redmi Note 10 Pro</span><span class="year">2021–23</span></div>
+      <div class="device"><span class="name">Poco F5</span><span class="year">2024</span></div>
+      <div class="device"><span class="name">CMF Phone 1</span><span class="year">2024</span></div>
+      <div class="device"><span class="name">Nothing Phone (3a)</span><span class="year">2025</span></div>
+      <div class="device"><span class="name">OnePlus Nord 5</span><span class="year">2025</span></div>
+      <div class="device"><span class="name">OnePlus 15R</span><span class="year">2026</span></div>
+      <div class="device current"><span class="name">OnePlus 13<span class="current-tag">Current</span></span><span class="year">2026</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>m4y4nky.top</span>
+    <span id="year-tag"></span>
+  </footer>
+
 </div>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
-</body></html>
+<script>
+  document.getElementById('year-tag').textContent = 'built ' + new Date().getFullYear();
+</script>
+</body>
+</html>
+
