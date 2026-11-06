@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>M4y4nky | Android, Homelab &amp; Phone Tech</title>
+<meta name="description" content="A self-hosted homelab on TrueNAS, my laptop, my OnePlus 13 and every Android phone I've owned. Specs, setups and phone history in one place.">
+<meta name="author" content="MaYank">
+<link rel="canonical" href="https://m4y4nky.top/">
+<meta name="theme-color" id="tc" content="#ffffff">
+<meta property="og:title" content="M4y4nky | Android, Homelab &amp; Phone Tech">
+<meta property="og:description" content="A self-hosted homelab on TrueNAS, my laptop, my OnePlus 13 and every Android phone I've owned. Specs, setups and phone history in one place.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://m4y4nky.top">
+<meta property="og:site_name" content="m4y4nky.top">
+<meta property="og:image" content="https://m4y4nky.top/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="M4y4nky, Android, homelab and phone tech">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="M4y4nky | Android, Homelab &amp; Phone Tech">
+<meta name="twitter:description" content="A self-hosted homelab on TrueNAS, my laptop, my OnePlus 13 and every Android phone I've owned. Specs, setups and phone history in one place.">
+<meta name="twitter:image" content="https://m4y4nky.top/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"M4y4nky","alternateName":"MaYank","url":"https://m4y4nky.top","image":"https://m4y4nky.top/avatar.png","knowsAbout":["Android","Homelab","Self-hosting","TrueNAS","Smartphones"],"sameAs":["https://www.instagram.com/m4y4nky.top"]}</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23111'/><text x='50' y='68' font-size='56' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%23fff'>M</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}document.documentElement.classList.add("js")</script>
+<style>
+:root{--bg:#fff;--fg:#111;--dim:#8a8a8f;--line:#ececee;--ac:#2b5cff;color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0b0c;--fg:#f2f2f3;--dim:#7c7c82;--line:#232326;--ac:#7f9bff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b0b0c;--fg:#f2f2f3;--dim:#7c7c82;--line:#232326;--ac:#7f9bff;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+::selection{background:var(--ac);color:#fff}
+body{transition:background .3s,color .3s;background:var(--bg);color:var(--fg);font:400 16px/1.55 Inter,system-ui,sans-serif;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+main{position:relative;max-width:680px;margin:0 auto;padding:56px 24px 96px;animation:in .7s ease both}
+@keyframes in{from{opacity:0;transform:translateY(8px)}}
+h1{font-size:clamp(46px,13vw,104px);font-weight:600;letter-spacing:-.055em;line-height:.95}
+h2{font-size:15px;font-weight:500;color:var(--ac);margin:72px 0 8px}
+.dev{margin-top:36px}
+.dev h3{font-size:20px;font-weight:600;letter-spacing:-.02em}
+.dev .s{color:var(--dim);font-size:15px;margin-bottom:10px}
+.row{display:flex;justify-content:space-between;gap:24px;padding:10px 0;border-top:1px solid var(--line);font-size:15px}
+.row span:first-child{color:var(--dim);flex:none}
+.row span:last-child{text-align:right}
+.ph{display:flex;justify-content:flex-start;align-items:center;gap:16px;padding:10px 0;border-top:1px solid var(--line)}
+.th{flex:none;width:58px;display:block}
+.th svg{height:116px;width:auto;display:block;margin:0 auto}
+.yg{break-inside:avoid;margin-top:30px}
+.yg h4{font-size:14px;font-weight:500;color:var(--dim);margin-bottom:2px;font-variant-numeric:tabular-nums}
+.ph.cur{font-weight:600;background:rgba(34,197,94,.09);border-radius:14px;border-top-color:transparent;padding:15px 16px;margin:8px -16px}
+.ph.cur .y{color:var(--fg)}
+#theme{position:absolute;top:14px;right:20px}
+#theme{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--fg);cursor:pointer;display:grid;place-items:center;transition:border-color .2s}
+#theme:hover{border-color:var(--ac);color:var(--ac)}
+#theme:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+#theme svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7}
+.js .rv{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;margin-right:9px;vertical-align:1px;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
+.row span,.ph{transition:color .2s}
+@media(hover:hover){.row:hover span:first-child{color:var(--ac)}.ph:not(.cur):hover{color:var(--ac)}}
+.note{display:block;padding-left:17px;font-weight:400;font-size:14px;color:var(--dim);margin-top:2px}
+@media(min-width:760px){#theme{top:28px;right:40px}main{padding-top:96px}.row,.ph{font-size:16px}}
+@media(min-width:1000px){main{max-width:1040px}#devs{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;align-items:start}.dev{margin-top:28px}#phones{columns:2;column-gap:48px}}
+@media print{#theme{display:none}main{max-width:none;padding:0;animation:none}.js .rv{opacity:1;transform:none}#devs{display:block}#phones{columns:2}:root{--bg:#fff;--fg:#111;--dim:#555;--line:#ccc;--ac:#111}}
+@media(prefers-reduced-motion:reduce){body{transition:none}.js .rv{opacity:1;transform:none;transition:none}main{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main>
+<button id="theme" aria-label="Toggle light and dark theme"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+<header class="top"><h1>M4y4nky</h1></header>
+
+<h2>Devices</h2>
+<div id="devs"></div>
+
+<h2>Phones I've owned</h2>
+<div id="phones"></div>
+</main>
+
+<script>
+const G=(id,a,b)=>`<linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient>`;
+const G3=(id,a,b,c)=>`<linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset=".5" stop-color="${b}"/><stop offset="1" stop-color="${c}"/></linearGradient>`;
+const f=v=>+v.toFixed(2);
+const lens=(x,y,r,ring="#7d818c")=>`<circle cx="${x}" cy="${y}" r="${r}" fill="#14151a" stroke="${ring}" stroke-width="${f(r*.14)}"/><circle cx="${x}" cy="${y}" r="${f(r*.62)}" fill="#07070a"/><circle cx="${f(x+r*.2)}" cy="${f(y-r*.2)}" r="${f(r*.18)}" fill="#4a6aa8" opacity=".75"/>`;
+const dot=(x,y,r,c="#efe6bd",s="#a99f78")=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${c}" stroke="${s}" stroke-width=".3"/>`;
+const T=(x,y,t,sz,c,o={})=>`<text x="${x}" y="${y}" font-size="${sz}" font-family="sans-serif" font-weight="${o.w||600}" text-anchor="${o.a||"middle"}" fill="${c}"${o.i?' font-style="italic"':""}${o.r?` transform="rotate(${o.r} ${x} ${y})"`:""}>${t}</text>`;
+const grill=(x1,x2,ys,c)=>ys.map(y=>`<path d="M${x1} ${y}H${x2}" stroke="${c}" stroke-width=".8" stroke-dasharray=".7 .7"/>`).join("");
+const op=(x,y,s,c)=>`<rect x="${f(x-s/2)}" y="${f(y-s/2)}" width="${s}" height="${s}" fill="none" stroke="${c}" stroke-width="${f(s*.1)}"/>`+T(f(x-s*.1),f(y+s*.22),"1",f(s*.62),c,{w:700})+`<path d="M${f(x+s*.4)} ${f(y-s*.5)}h${f(s*.3)}M${f(x+s*.55)} ${f(y-s*.65)}v${f(s*.3)}" stroke="${c}" stroke-width="${f(s*.1)}"/>`;
+const bigring=(x,y)=>`<circle cx="${x}" cy="${y}" r="5.95" fill="#f7f7f9" stroke="#a9acb5" stroke-width=".7"/><circle cx="${x}" cy="${y}" r="4.8" fill="#15161a"/>`+lens(x,y,3.3,"#555");
+const D={
+"Lava Iris X5":{fill:"#f4f4f5",stroke:"#b9bac0",g:
+ `<circle cx="16.4" cy="6.4" r="4.4" fill="#e9e9ec" stroke="#aaaab0" stroke-width=".5"/>`+lens(16.4,6.4,3.3,"#555")+dot(14.9,12.6,.9,"#e3dc8a","#999")+dot(17.9,12.6,.9,"#e3dc8a","#999")+`<circle cx="30.3" cy="12.6" r=".45" fill="#333"/>`+T(23.2,7.2,"8.0MP",2,"#d6343b",{a:"start",w:500})+T(23.3,50.5,"iris x5",2.6,"#8a8a90",{w:500})+T(24.5,87.6,"LAVA",2.6,"#777")+grill(14.4,24.6,[90.4,92,93.6],"#8a8a90")},
+"LYF LS-4005":{fill:"#2a2a2d",stroke:"#c9a36b",sw:1.3,g:
+ `<circle cx="25" cy="13.1" r="4.4" fill="#222225" stroke="#d3b176" stroke-width=".9"/>`+lens(25,13.1,3.1,"#444")+dot(25,20.6,1.3,"#d8d58a","#c4a76c")+T(25,32.2,"LYF",6.2,"#8d8d91",{w:800})+grill(14,24.2,[88.4,90,91.6,93.2],"#6a6a6e")},
+"Samsung Galaxy A8 & J2":{fill:"#f7f7f8",stroke:"#c3c6cc",sw:1.2,g:
+ `<rect x="13.3" y="12" width="5.2" height="5.6" rx="1" fill="#f0f0f2" stroke="#c8c8cc" stroke-width=".3"/>`+[0,1,2].map(i=>[0,1,2].map(j=>`<circle cx="${14.4+i*1.5}" cy="${13.2+j*1.6}" r=".3" fill="#a5a5aa"/>`).join("")).join("")+`<circle cx="24" cy="15" r="3.9" fill="#e4e4e8" stroke="#b5b5bb" stroke-width=".4"/>`+lens(24,15,2.7,"#6a6a70")+`<circle cx="32.6" cy="14.8" r="1.9" fill="#f5f1e2" stroke="#b8b8bd" stroke-width=".4"/><circle cx="32.6" cy="14.8" r=".9" fill="#fff"/>`+T(23,35.3,"SAMSUNG",3.2,"#8a8a90",{w:700})+`<rect x="19.3" y="71.1" width="2" height="1.7" rx=".3" fill="none" stroke="#909096" stroke-width=".3"/>`+T(25.6,73,"DUOS",2.6,"#909096",{w:700})},
+"Redmi Note 5 Pro":{fill:"url(#n5)",stroke:"#c3aa7c",defs:G("n5","#ecdcc0","#dcc59d"),g:
+ `<path d="M1.6 3.9H48.4M1.6 95.1H48.4" stroke="#c3aa7c" stroke-width=".5"/><rect x="6" y="7" width="5.2" height="16.5" rx="2.6" fill="#1d1d20" stroke="#cdb58a" stroke-width=".5"/>`+lens(8.6,10.8,1.5,"#8a8d96")+lens(8.6,20.2,1.3,"#8a8d96")+dot(8.7,15.6,.5)+`<circle cx="25" cy="27" r="3.4" fill="#e0cba6" stroke="#c4aa7a" stroke-width=".6"/><rect x="23.5" y="73.2" width="3.4" height="3.4" rx=".7" fill="#f6efe3"/>`+T(25.2,75.6,"mi",2.1,"#cbb58a",{w:700})},
+"POCO X2":{fill:"url(#px)",stroke:"#3a3fc4",defs:G3("px","#2f86ff","#3f4df0","#5a2fd6")+`<radialGradient id="xd" cx=".35" cy=".45" r=".75"><stop offset="0" stop-color="#52d6ff"/><stop offset=".6" stop-color="#2f8cff"/><stop offset="1" stop-color="#2a63f0"/></radialGradient>`,g:
+ `<circle cx="25" cy="16.9" r="12.6" fill="url(#xd)" stroke="#5aa8ff" stroke-width=".5"/><circle cx="25" cy="16.9" r="11.6" fill="none" stroke="#bfe9ff" stroke-width=".2" opacity=".6"/><rect x="21.5" y="5.35" width="7" height="23.1" rx="3.5" fill="#0c0c10"/>`+lens(25,8.75,2.3,"#555")+lens(25,14,1,"#555")+lens(25,19.1,1.4,"#555")+lens(25,25.3,2.3,"#555")+`<rect x="23.4" y="30.2" width="3.2" height="1.6" rx=".8" fill="#f1e6c8" stroke="#c8b98f" stroke-width=".25"/><circle cx="24.4" cy="31" r=".35" fill="#a99f78"/><circle cx="25.6" cy="31" r=".35" fill="#a99f78"/>`+T(25,80.4,"POCO",3.1,"#ecd9f7",{w:800})},
+"Redmi Note 10 Pro":{fill:"url(#n10)",stroke:"#d9a27c",defs:G("n10","#f2dfb9","#f29463"),g:
+ `<rect x="5.3" y="3.6" width="16.3" height="26" rx="3.4" fill="#ebc88e" stroke="#cfa863" stroke-width=".5"/><rect x="6.2" y="4.6" width="10.7" height="23.9" rx="2.6" fill="#0e0e11"/><rect x="6.7" y="5.1" width="9.8" height="8.8" rx="2.2" fill="#d9dce2"/><rect x="7.2" y="14.6" width="8.8" height="4.2" rx="2.1" fill="#19191d"/>`+lens(11.6,9.3,3.26,"#444")+lens(8.7,16.5,1.5,"#555")+lens(14.3,16.5,1.5,"#555")+lens(11.6,23.7,2.7,"#444")+dot(19.2,13.2,1,"#e6e6e6","#b8b8b8")+`<circle cx="19.1" cy="16.4" r=".25" fill="#d33"/><ellipse cx="19.2" cy="19" rx=".75" ry="2.5" fill="#14141a" stroke="#cfa863" stroke-width=".35"/>`+T(10.3,82.7,"Redmi",3.4,"#ffffff",{r:-90,w:500})},
+"Poco F5":{fill:"url(#f5)",stroke:"#b8c7d6",defs:G("f5","#f5f9fb","#b9dfe3"),g:
+ [[9.3,8.7],[9.3,23.3]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="6.55" fill="#fbfbfc" stroke="#d0d3d9" stroke-width=".35"/><circle cx="${p[0]}" cy="${p[1]}" r="5.14" fill="#0d0e10"/>`+lens(p[0],p[1],3.1,"#444")).join("")+`<circle cx="18.8" cy="16.2" r="3.8" fill="#fbfbfc" stroke="#d0d3d9" stroke-width=".35"/><circle cx="18.8" cy="16.2" r="3.44" fill="#0d0e10"/>`+lens(18.8,16.2,1.9,"#444")+`<rect x="17.9" y="22" width="1.84" height="4.4" rx=".92" fill="#f2f2f4" stroke="#b5b8bf" stroke-width=".3"/><path d="M17.9 24.2h1.84" stroke="#b5b8bf" stroke-width=".25"/>`+T(10.4,76.9,"5G",1.5,"#5f6f73",{w:700})+`<rect x="8.9" y="75.3" width="3" height="3" rx=".7" fill="none" stroke="#6c7a7e" stroke-width=".3"/>`+T(10.4,85.2,"POCO",3.7,"#5f6f73",{w:800,r:-90})},
+"CMF Phone 1":{fill:"#2b2a2f",stroke:"#4a4a50",g:
+ `<rect x="1.9" y="2.1" width="12.6" height="22.2" rx="6.3" fill="#66666c" stroke="#8b8b91" stroke-width=".5"/>`+lens(8.2,7.9,3.3,"#2e2e33")+lens(8.2,17.5,3.3,"#2e2e33")+`<rect x="15.6" y="9.9" width="2.3" height="4.2" rx="1.1" fill="#d9d9dd" stroke="#9b9ba0" stroke-width=".3"/>`+[[16.9,3.6],[3.8,26.3],[45.5,26.6],[3.8,88]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="1.3" fill="#1d1d20" stroke="#5a5a60" stroke-width=".4"/><path d="M${p[0]-.8} ${p[1]+.4}l1.6-.8" stroke="#6a6a70" stroke-width=".25"/>`).join("")+`<circle cx="43.6" cy="91.7" r="5.8" fill="#0f0f11" stroke="#323237" stroke-width=".6"/>`+T(6.4,78.4,"cmf",4.2,"#8a8a90",{w:800,r:-90})+T(10.1,78,"by NOTHING",1.2,"#76767c",{w:500,r:-90})+`<path d="M40.9 55v10M42.1 55v10" stroke="#6a6a70" stroke-width=".35" stroke-dasharray=".5.4"/><rect x="40.2" y="73.6" width="2" height="2.6" fill="none" stroke="#7a7a80" stroke-width=".3"/><path d="M39.9 73.3l2.6 3.2M42.5 73.3l-2.6 3.2" stroke="#7a7a80" stroke-width=".3"/>`+T(41.2,82.6,"CE",2.6,"#7a7a80",{w:600,r:-90})},
+"Nothing Phone (3a)":(()=>{
+ const X=x=>f(1+48*(x-90)/550),Y=y=>f(1+98*(y-42)/1388),W=w=>f(w*48/550),H=h=>f(h*98/1388),S=r=>f(r*.0789);
+ const R=(x,y,w,h,fl,st,rx)=>`<rect x="${X(x)}" y="${Y(y)}" width="${W(w)}" height="${H(h)}" rx="${rx||0}" fill="${fl}"${st?` stroke="${st}" stroke-width=".3"`:""}/>`;
+ const C=(x,y,r,fl,st)=>`<circle cx="${X(x)}" cy="${Y(y)}" r="${S(r)}" fill="${fl}"${st?` stroke="${st}" stroke-width=".3"`:""}/>`;
+ const scr=(x,y)=>C(x,y,13,"#f4f4f5","#b9b9bf")+C(x,y,5,"#8d8d93");
+ const glow=d=>`<path d="${d}" fill="none" stroke="#dfe1e6" stroke-width="3.2" stroke-linecap="round"/><path d="${d}" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/>`;
+ let g=R(470,60,165,145,"#e2e2e5",null,2)+`<circle cx="25" cy="21.9" r="18.3" fill="#f8f8f9" stroke="#d7d7db" stroke-width=".35"/>`
+  +R(180,232,380,208,"#fcfcfc","#d6d6da",7.3)+R(218,275,307,123,"#17171a",null,4.4)
+  +glow(`M${X(125)} ${Y(240)}Q${X(120)} ${Y(120)} ${X(248)} ${Y(95)}`)+glow(`M${X(145)} ${Y(462)}L${X(205)} ${Y(535)}`)+glow(`M${X(608)} ${Y(272)}Q${X(618)} ${Y(390)} ${X(580)} ${Y(490)}`)
+  +lens(X(272),Y(330),3,"#555")+lens(X(372),Y(335),3.2,"#555")+lens(X(475),Y(337),3.7,"#666")
+  +[[130,70],[283,78],[115,187],[612,205],[115,433]].map(p=>C(p[0],p[1],13,"#f1f1f3","#b9b9bf")+C(p[0],p[1],5,"#8d8d93")).join("")
+  +scr(318,165)+scr(527,233)+C(563,148,22,"#f6f6f7","#c9c9ce")+C(563,148,6,"#9a9aa0")+C(320,505,12,"none","#cfcfd4")+C(580,540,22,"none","#dcdce0")
+  +R(455,598,60,14,"#e9e9ec","#cfcfd3",1)+R(592,587,38,43,"#c4262d")
+  +`<path d="M${X(97)} ${Y(628)}H${X(632)}" stroke="#d2d2d6" stroke-width=".35"/>`
+  +R(97,835,178,190,"#e3e3e5")+R(97,1025,178,390,"#fbfbfb","#d9d9dc")+R(280,640,350,190,"#fdfdfd","#e2e2e5")+R(280,830,350,420,"#fdfdfd","#e2e2e5")+R(404,830,68,280,"#e6e6e8")
+  +`<path d="M${X(280)} ${Y(830)}V${Y(1100)}Q${X(282)} ${Y(1250)} ${X(460)} ${Y(1255)}" fill="none" stroke="#d0d0d4" stroke-width=".35"/>`
+  +R(278,1262,182,163,"#ebebed")+R(548,1065,82,185,"#e6e6e8")+R(460,1195,88,205,"#fdfdfd","#e2e2e5")
+  +scr(318,1278)+scr(318,1385)+C(125,904,12,"none","#b9b9bf")+C(238,1178,10,"none","#d0d0d4")+C(610,900,9,"none","#c9c9ce")
+  +T(5.4,86.6,"NOTHING",1.9,"#4a4a50",{w:700,r:-90})
+  +T(45.1,82.8,"UK",1.7,"#5a5a60",{w:700,r:-90})+T(45.1,89.5,"CE",2.4,"#6a6a70",{w:600,r:-90})
+  +`<path d="M44.2 85.2l1.8 2.2M46 85.2l-1.8 2.2" stroke="#6a6a70" stroke-width=".3"/><path d="M45.1 73v8" stroke="#8a8a90" stroke-width=".4" stroke-dasharray=".5.4"/>`;
+ return {fill:"#f1f1f3",stroke:"#c8c8cd",g};
+})(),
+"OnePlus Nord 5":{fill:"url(#nd)",stroke:"#7a7a84",defs:G("nd","#6d6d77","#585862"),g:
+ `<rect x="4.2" y="3.6" width="13.2" height="31.7" rx="6.6" fill="#7a7a83" stroke="#8b8b94" stroke-width=".4"/><rect x="6" y="5.4" width="9.6" height="28.1" rx="4.8" fill="#08080a"/><circle cx="11" cy="9.7" r="4.6" fill="#111114"/><circle cx="11" cy="19.3" r="4.6" fill="#111114"/><circle cx="10.8" cy="28.9" r="4.6" fill="#111114"/>`+lens(11,9.7,1.9,"#444")+lens(11,19.3,1.9,"#444")+`<circle cx="10.8" cy="28.9" r="1.7" fill="#e9e9ed" stroke="#aaa" stroke-width=".3"/>`+op(24.5,51.2,9.3,"#8c8c97")},
+"OnePlus 13":{fill:"url(#o13)",stroke:"#5d78b5",defs:G("o13","#284d92","#0b1d44")+`<radialGradient id="o13i"><stop offset="0" stop-color="#e3e6ec"/><stop offset="1" stop-color="#b3b8c3"/></radialGradient>`,g:
+ `<path d="M1 21.8H3.5M35.6 21.8H48.8" stroke="#e8ecf5" stroke-width=".9"/><circle cx="19.7" cy="21.8" r="15.9" fill="url(#o13i)" stroke="#aeb3bf" stroke-width="1"/><circle cx="19.7" cy="21.8" r="11.5" fill="none" stroke="#fff" stroke-width=".3" opacity=".6"/>`+lens(14.1,16.1,4.4,"#2c2c30")+lens(25.5,16.1,4.4,"#2c2c30")+lens(14.1,27.1,4.4,"#2c2c30")+`<circle cx="25.5" cy="27.1" r="4.4" fill="#0e0e10" stroke="#2c2c30" stroke-width=".6"/><circle cx="25.5" cy="27.1" r="3" fill="#e8d9b0"/><circle cx="31.6" cy="21.8" r=".5" fill="#222"/>`+T(41.9,17.6,"H",5.6,"#fff",{w:800,i:1})+op(25,52.3,6.5,"#7e92c4")},
+"OnePlus 15R":{fill:"url(#r15)",stroke:"#a8c79a",defs:G("r15","#eaf5df","#cde4c2"),g:
+ `<rect x="4.1" y="4.1" width="19.8" height="26.7" rx="6.5" fill="#c9e1bb" stroke="#b3cfa4" stroke-width=".5"/><rect x="5.9" y="6.2" width="10.3" height="22.6" rx="5.1" fill="#070708"/>`+lens(11.1,11.3,2.3,"#444")+lens(11.1,23.9,2.3,"#444")+`<circle cx="11.1" cy="17.5" r=".45" fill="#1b2036"/>`+dot(20.1,11.3,1.5,"#f6f1d8","#c9c3a0")+op(25.2,52,7.5,"#a3b79a")}
+};
+D["OnePlus 13"].rx=9;D["CMF Phone 1"].rx=6;D["OnePlus 15R"].rx=6.5;
+const art=n=>{const d=D[n],rx=d.rx||8;return `<svg viewBox="0 0 50 100" role="img" aria-label="${n.replace(/&/g,"&amp;")}"><defs>${d.defs||""}<clipPath id="bc${rx}"><rect x="1" y="1" width="48" height="98" rx="${rx}"/></clipPath></defs><rect x="1" y="1" width="48" height="98" rx="${rx}" fill="${d.fill}"/><g clip-path="url(#bc${rx})">${d.g}</g><rect x="1" y="1" width="48" height="98" rx="${rx}" fill="none" stroke="${d.stroke}" stroke-width="${d.sw||1}"/></svg>`};
+const devs=[
+{t:"Home Server",s:"M4y4nky-Home-Server",r:[
+["Host","Dell OptiPlex 5060 SFF"],["CPU","i5-8500T, 6c/6t"],["RAM","32GB DDR4 2666MHz"],
+["OS","TrueNAS SCALE 25.10.7"],
+["Storage",["128GB SATA SSD (boot)","512GB NVMe (apps)",'2×2TB HDD 3.5" (mirror)','2.5" external HDD']]]},
+{t:"Laptop",s:"Acer Aspire 7 (A715-76G)",r:[
+["CPU","i5-12450H, 8c/12t"],["GPU","RTX 3050 4GB + Iris UHD"],["RAM","16GB DDR4 3200MHz"],
+["Storage","1TB Samsung 980 PRO"],["OS","Windows 11 Home"]]},
+{t:"Phone",s:"OnePlus 13",r:[
+["Chipset","Snapdragon 8 Elite"],["Display",'6.82" LTPO AMOLED, 120Hz'],["RAM","12GB LPDDR5X"],
+["Storage","256GB UFS 4.0"],["Battery","6000mAh, 100W wired"]]}
+];
+const phones=[
+["Lava Iris X5","2016"],["LYF LS-4005","2016"],["Samsung Galaxy A8 & J2","2017-18"],
+["Redmi Note 5 Pro","2019"],["POCO X2","2020"],["Redmi Note 10 Pro","2021-23"],
+["Poco F5","2024"],["CMF Phone 1","2024"],["Nothing Phone (3a)","2025"],
+["OnePlus Nord 5","2025"],["OnePlus 13","2026"],["OnePlus 15R","2026"],
+["OnePlus 13","2026","Current, back again"]
+];
+document.getElementById("devs").innerHTML=devs.map(d=>
+`<section class="dev rv"><h3>${d.t}</h3><div class="s">${d.s}</div>${d.r.map(x=>`<div class="row"><span>${x[0]}</span><span>${Array.isArray(x[1])?x[1].join("<br>"):x[1]}</span></div>`).join("")}</section>`).join("");
+const groups=[];
+phones.forEach(p=>{let g=groups.find(x=>x[0]===p[1]);if(!g)groups.push(g=[p[1],[]]);g[1].push(p)});
+document.getElementById("phones").innerHTML=groups.map(g=>
+`<div class="yg rv"><h4>${g[0]}</h4>${g[1].map(p=>`<div class="ph${p[2]?" cur":""}"><span class="th">${art(p[0])}</span><span>${p[2]?'<i class="dot"></i>':""}${p[0]}${p[2]?`<span class="note">${p[2]}</span>`:""}</span></div>`).join("")}</div>`).join("");
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+const r=document.documentElement,mq=matchMedia("(prefers-color-scheme: dark)"),tc=document.getElementById("tc");
+const cur=()=>r.dataset.theme||(mq.matches?"dark":"light");
+const apply=()=>{tc.content=cur()==="dark"?"#0b0b0c":"#ffffff"};
+apply();mq.addEventListener("change",apply);
+document.getElementById("theme").onclick=()=>{
+  r.dataset.theme=cur()==="dark"?"light":"dark";
+  try{localStorage.setItem("theme",r.dataset.theme)}catch(e){}
+  apply();
+};
+</script>
+</body>
+</html>
